@@ -1,8 +1,6 @@
 package co.edu.uniquindio.LaboratorioListasEnlazadas.Lists;
 
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class ListaSimple<T> implements Iterable<T> {
 
@@ -172,6 +170,20 @@ public class ListaSimple<T> implements Iterable<T> {
 
         return -1;
 
+    }
+
+    public int countRepetitions(T amount) {
+        Nodo<T> current = firstNodo;
+        int counter = 0;
+
+        while (current != null) {
+            if (current.getAmountNodo().equals(amount)) {
+                counter++;
+            }
+            current = current.getNextNodo();
+        }
+
+        return counter;
     }
 
 
